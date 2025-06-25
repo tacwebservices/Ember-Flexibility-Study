@@ -1,0 +1,47 @@
+run:
+  name: validation_2024
+
+snapshots:
+  start: "2024-01-01"
+  end:   "2025-01-01"
+
+load:
+  fixed_year: 2024
+  supplement_synthetic: true
+
+atlite:
+  cutout_directory: cutouts
+  default_cutout: europe-2024-sarah3-era5
+  nprocesses: 4
+  show_progress: false
+  cutouts:
+    # use 'base' to determine geographical bounds and time span from config
+    # base:
+      # module: era5
+    europe-2013-sarah3-era5:
+      module: [sarah, era5] # in priority order
+      x: [-12., 42.]
+      y: [33., 72.]
+      dx: 0.3
+      dy: 0.3
+      time: ['2024', '2024']
+      
+
+lines:
+  under_construction: remove
+  max_extension: 0
+
+links:
+  under_construction: remove
+  max_extension: 0
+
+transmission_projects:
+  enable: false
+
+electricity:
+  conventional_generation:
+    from_entsoe: true
+    year: 2024
+
+costs:
+  year: 2024
