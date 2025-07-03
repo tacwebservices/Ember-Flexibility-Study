@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Contributors to PyPSA-Eur <https://github.com/pypsa/pypsa-eur>
+# SPDX-FileCopyrightText: Open Energy Transition gGmbH and contributors to PyPSA-Eur <https://github.com/pypsa/pypsa-eur>
 #
 # SPDX-License-Identifier: CC0-1.0
 
@@ -988,6 +988,7 @@ solving:
 
   agg_p_nom_limits:
     agg_offwind: false
+    agg_solar: false
     include_existing: false
     file: data/agg_p_nom_minmax.csv
 
