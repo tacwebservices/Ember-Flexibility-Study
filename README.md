@@ -32,7 +32,41 @@ This repository is maintained using [OET's soft-fork strategy](https://open-ener
 
 # Installation and Usage
 
-## 1. Installation
+## 1. Fork and clone the repository
+
+To contribute or keep your work separate, first fork the repository [Ember-Flexibility-Study](https://github.com/open-energy-transition/Ember-Flexibility-Study/) on GitHub to your own account. Please make sure to check the box `Copy the master branch only`. Then, clone your fork locally:
+
+    git clone https://github.com/<your-username>/Ember-Flexibility-Study.git
+
+Once you have cloned your fork, you should add the following upstream remotes to keep your repository up to date with the main projects:
+
+- Add the main [Ember-Flexibility-Study](https://github.com/open-energy-transition/Ember-Flexibility-Study/) repository as `upstream`:
+
+      git remote add upstream https://github.com/open-energy-transition/Ember-Flexibility-Study.git
+
+- Add the main OET soft-fork of PyPSA-Eur as `upstream_pypsa_eur_oet`:
+
+      git remote add upstream_pypsa_eur_oet https://github.com/open-energy-transition/pypsa-eur.git
+
+This setup allows you to fetch and integrate changes from both the main study repository and the OET soft-fork of PyPSA-Eur.
+
+## 2. Merging changes from upstream repositories
+
+To keep your fork up to date, you can merge changes from the master branch of either `upstream_pypsa_eur_oet` or `upstream` as follows:
+
+- To merge changes from the OET soft-fork of PyPSA-Eur:
+
+      git fetch upstream_pypsa_eur_oet
+      git merge upstream_pypsa_eur_oet/master
+
+- To merge changes from the main Ember-Flexibility-Study repository:
+
+      git fetch upstream
+      git merge upstream/master
+
+Resolve any conflicts if they arise, then push the updates to your fork if needed.
+
+## 3. Installation
 
 Clone the repository:
 
@@ -46,7 +80,7 @@ Activate the newly created `{{project_short_name}}` environment:
 
     mamba activate {{project_short_name}}
 
-## 2. Run the analysis
+## 4. Run the analysis
 
     snakemake -call
 
@@ -62,8 +96,11 @@ To generate a PDF of the dependency graph of all steps `resources/dag.pdf` run:
 
 We strongly welcome anyone interested in contributing to this project. If you have any ideas, suggestions or encounter problems, feel invited to file issues or make pull requests on GitHub.
 
-- To **discuss** with other users, organise projects, share news, and get in touch with the community you can use the [Discord server](https://discord.gg/AnuJBk23FU).
-- For **bugs and feature requests**, please use the [GitHub Issues page](https://github.com/open-energy-transition/{{repository}}/issues).
+## Issue a pull request and merging it
+To issue a pull request to the `master` branch of the upstream repository [Ember-Flexibility-Study](https://github.com/open-energy-transition/Ember-Flexibility-Study/), please follow the [instructions](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) and follow the instructions from the pull request [template](https://github.com/open-energy-transition/Ember-Flexibility-Study/blob/master/.github/pull_request_template.md).
+
+## Raise issues, bugs or feature requests
+For **issues, bugs and feature requests**, please use the [GitHub Issues page](https://github.com/open-energy-transition/{{repository}}/issues).
 
 # Licence
 
