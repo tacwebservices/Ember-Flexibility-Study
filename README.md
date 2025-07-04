@@ -92,6 +92,47 @@ To generate a PDF of the dependency graph of all steps `resources/dag.pdf` run:
 
 ---
 
+# What is Snakemake?
+
+[Snakemake](https://snakemake.readthedocs.io/) is a workflow management system that enables reproducible and scalable data analyses. It allows you to define complex pipelines in a readable Python-based language, automatically handling dependencies, job execution, and resource management. Snakemake is widely used in scientific computing for automating data processing, analysis, and reporting.
+
+## Defining Rules in Snakemake
+
+Snakemake workflows are built from modular units called **rules**. Each rule specifies how to create output files from input files, using scripts or shell commands. Rules define the steps of your workflow and their dependencies, making it easy to manage complex pipelines.
+
+## Main Snakemake Command-Line Keys
+
+Here are some of the most important command-line options (keys) to control the workflow:
+
+- `-j`, `--jobs [N]`: Set the maximum number of jobs to run in parallel (e.g., `-j 4`).
+- `-c`, `--cores [N]`: Specify the number of CPU cores to use (e.g., `-c 1`).
+- `-n`, `--dryrun`: Show what would be executed without actually running the workflow.
+- `-s`, `--snakefile [FILE]`: Specify a custom Snakefile (default is `Snakefile`).
+- `-R`, `--rerun-incomplete`: Re-run jobs with incomplete output files.
+- `--unlock`: Unlock the working directory if a previous run was interrupted.
+- `--dag`: Print the directed acyclic graph (DAG) of jobs in the workflow.
+- `--forceall`: Force the execution of all rules, regardless of output file timestamps.
+- `-k`, `--keep-going`: Continue as much as possible after an error.
+- `--config [KEY=VALUE,...]`: Override config file values from the command line.
+
+For a full list of options, see the [Snakemake documentation](https://snakemake.readthedocs.io/en/stable/executing/cli.html) or run `snakemake --help`.
+
+## Important Rules in PyPSA-Eur
+
+In [PyPSA-Eur](https://github.com/PyPSA/pypsa-eur), some of the most important rules that structure the workflow include:
+
+- **retrieve**: Downloads and prepares all required input data.
+- **build_network**: Constructs the base energy system network from input data.
+- **prepare_sector**: Prepares sector-coupling data (e.g., heating, transport).
+- **solve_network**: Runs the optimization to solve the energy system model.
+- **postprocess**: Processes and analyzes the results after solving.
+- **plot_network**: Generates plots and visualizations from the results.
+- **report**: Builds the final report or documentation from the results.
+
+These rules are typically defined in separate `.smk` files (e.g., `rules/retrieve.smk`, `rules/build_electricity.smk`) and are orchestrated by the main `Snakefile`.
+
+---
+
 # Contributing and Support
 
 We strongly welcome anyone interested in contributing to this project. If you have any ideas, suggestions or encounter problems, feel invited to file issues or make pull requests on GitHub.
