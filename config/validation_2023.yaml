@@ -10,8 +10,10 @@ scenario:
   - ''
   planning_horizons:
   - 2023
-
+# Validation
+year: 2023
 download_ember_data: true
+Plot_Validation_generation_and_flows_graphs: true
 
 snapshots:
   start: "2023-01-01"
