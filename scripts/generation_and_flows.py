@@ -6,7 +6,7 @@ import numpy as np
 import os
 from itertools import combinations
 
-# Configuration (updated for Snakemake)
+# Configuration (updated for Snakemake for snakefile)
 def get_config():
     return snakemake.config if 'snakemake' in globals() else {'year': 2023}
 
@@ -35,7 +35,7 @@ color_dict = {
     "Solar": "#ffaa00"
 }
 
-# Load data
+# Load data from ember
 n = pypsa.Network(network_path)
 ember_monthly = pd.read_csv(ember_monthly_data_path)
 
@@ -110,7 +110,7 @@ def process_ember_generation_yearly():
         print(f"Error processing yearly CSV: {e}")
         return None
 
-# Process Ember generation data (Monthly CSV)
+# Process Ember generation data (Monthly CSV) already downloaded by the workflow
 def process_ember_generation_monthly():
     print(f"Processing monthly CSV: {ember_monthly_data_path}")
     df = ember_monthly[ember_monthly["Continent"] == "Europe"].copy()

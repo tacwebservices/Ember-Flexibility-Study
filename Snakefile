@@ -49,7 +49,7 @@ wildcard_constraints:
     sector_opts=r"[-+a-zA-Z0-9\.\s]*",
     planning_horizons=r"[0-9]{4}",
 
-
+# added ember data download and plot_validation rules
 include: "rules/common.smk"
 include: "rules/collect.smk"
 include: "rules/retrieve.smk"
