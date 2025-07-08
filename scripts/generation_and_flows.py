@@ -143,7 +143,7 @@ def process_ember_generation(use_yearly=False):
         print("Falling back to monthly aggregation due to yearly CSV issues.")
     return process_ember_generation_monthly()
 
-# Process PyPSA generation data
+# Process PyPSA-Eur model generation data
 def process_pypsa_generation():
     pypsa_to_ember = {
         "biomass": "Bioenergy", "Bioenergy": "Bioenergy",

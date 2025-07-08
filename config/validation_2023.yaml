@@ -10,7 +10,7 @@ scenario:
   - ''
   planning_horizons:
   - 2023
-# Download data and plot Validation graphs for power generation and and flows
+# Download data and plot Validation graphs for power generation and flows
 year: 2023
 download_ember_data: true
 Plot_Validation_generation_and_flows_graphs: true

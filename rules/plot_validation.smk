@@ -1,4 +1,4 @@
-# Snakemake rule to generate validation plots for power generation and flows
+# Snakemake rule to generate validation graphs for power generation and flows
 rule plot_validation:
     input:
         network="results/validation_{year}/networks/base_s_39_elec_.nc",
