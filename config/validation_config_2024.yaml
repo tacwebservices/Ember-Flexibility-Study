@@ -84,5 +84,14 @@ load:
     gdp: 0.6
     population: 0.4
 
+sector:
+  transport: true
+  heating: true
+  biomass: false
+  industry: false
+  shipping: false
+  aviation: false
+  agriculture: false
+
 costs:
   year: 2020
