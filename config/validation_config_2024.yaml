@@ -5,16 +5,22 @@ scenario:
   clusters:
   - 39
   opts:
-  - ''
+  - 'Co2L'
   sector_opts:
-  - ''
+  - 'Co2L'
   planning_horizons:
-  - 2024
+  - 2025
 
 
 snapshots:
   start: "2024-01-01"
   end:   "2025-01-01"
+
+# docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#enable
+enable:
+  retrieve: true
+  build_cutout: true
+  retrieve_cutout: false
 
 countries: ['AL', 'AT', 'BA', 'BE', 'BG', 'CH', 'CZ', 'DE', 'DK', 'EE', 'ES', 'FI', 'FR', 'GB', 'GR', 'HR', 'HU', 'IE', 'IT', 'LT', 'LU', 'LV', 'ME', 'MK', 'NL', 'NO', 'PL', 'PT', 'RO', 'RS', 'SE', 'SI', 'SK'] #, 'XK']
 
@@ -28,7 +34,7 @@ atlite:
     # use 'base' to determine geographical bounds and time span from config
     # base:
       # module: era5
-    europe-2013-sarah3-era5:
+    europe-2024-sarah3-era5:
       module: [sarah, era5] # in priority order
       x: [-12., 42.]
       y: [33., 72.]
@@ -94,4 +100,4 @@ sector:
   agriculture: false
 
 costs:
-  year: 2020
+  year: 2025
