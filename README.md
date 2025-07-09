@@ -5,7 +5,7 @@ SPDX-License-Identifier: CC-BY-4.0
 
 # Ember Flexibility Study
 
-![Open Energy Transition Logo](doc/img/ember_oet.png)
+<img src="https://raw.githubusercontent.com/open-energy-transition/Ember-Flexibility-Study/refs/heads/master/doc/img/ember_oet.png" alt="Open Energy Transition Logo" width="200" height="234" align="right">
 
 This repository contains the code and analysis for the **Ember Flexibility Study**, conducted in collaboration with [Ember](https://ember-climate.org/) and [Open Energy Transition (OET)](https://openenergytransition.org/). The study investigates clean flexibility options for Europe's energy system, building on the PyPSA-Eur framework. All results are computed from raw data and code to ensure full reproducibility.
 
