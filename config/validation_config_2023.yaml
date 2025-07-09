@@ -48,8 +48,6 @@ links:
 transmission_projects:
   enable: false
 
-
-
 electricity:
   conventional_generation:
     from_entsoe: true
