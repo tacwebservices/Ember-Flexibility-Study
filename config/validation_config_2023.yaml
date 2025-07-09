@@ -5,11 +5,11 @@ scenario:
   clusters:
   - 39
   opts:
-  - ''
+  - 'Co2L'
   sector_opts:
-  - ''
+  - 'Co2L'
   planning_horizons:
-  - 2023
+  - 2025
 
 
 snapshots:
@@ -28,7 +28,7 @@ atlite:
     # use 'base' to determine geographical bounds and time span from config
     # base:
       # module: era5
-    europe-2013-sarah3-era5:
+    europe-2023-sarah3-era5:
       module: [sarah, era5] # in priority order
       x: [-12., 42.]
       y: [33., 72.]
@@ -84,5 +84,14 @@ load:
     gdp: 0.6
     population: 0.4
 
+sector:
+  transport: true
+  heating: true
+  biomass: false
+  industry: false
+  shipping: false
+  aviation: false
+  agriculture: false
+
 costs:
-  year: 2020
+  year: 2025
