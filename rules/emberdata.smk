@@ -4,7 +4,9 @@ DOWNLOADS = {
     "validation/ember_data/yearly_full_release_long_format.csv":
         "https://storage.googleapis.com/emb-prod-bkt-publicdata/public-downloads/yearly_full_release_long_format.csv",
     "validation/ember_data/europe_monthly_full_release_long_format.csv":
-        "https://storage.googleapis.com/emb-prod-bkt-publicdata/public-downloads/europe_monthly_full_release_long_format.csv"
+        "https://storage.googleapis.com/emb-prod-bkt-publicdata/public-downloads/europe_monthly_full_release_long_format.csv",
+    "validation/entsoe_data/physical_energy_power_flows_2023.csv":
+        "https://www.entsoe.eu/publications/data/power-stats/2023/physical_energy_power_flows_2023.csv"
 }
 
 rule download_ember_data:
@@ -32,3 +34,4 @@ rule download_ember_data:
                     print(f"Already exists: {filepath}")
         else:
             print("Skipping ember data download (flag is false or not set).")
+

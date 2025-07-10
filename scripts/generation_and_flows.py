@@ -15,7 +15,7 @@ year = config.get('year', 2023)
 network_path = snakemake.input.network if 'snakemake' in globals() else "results/validation_2023/networks/base_s_39_elec_.nc"
 ember_monthly_data_path = snakemake.input.ember_monthly if 'snakemake' in globals() else "validation/ember_data/europe_monthly_full_release_long_format.csv"
 ember_yearly_data_path = snakemake.input.ember_yearly if 'snakemake' in globals() else "validation/ember_data/yearly_full_release_long_format.csv"
-power_flows_data_path = snakemake.input.power_flows if 'snakemake' in globals() else "validation/ember_data/physical_energy_power_flows_2023.csv"
+power_flows_data_path = snakemake.input.power_flows if 'snakemake' in globals() else "validation/entsoe_data/physical_energy_power_flows_2023.csv"
 
 countries = ['AL', 'AT', 'BA', 'BE', 'BG', 'CH', 'CY', 'CZ', 'DE', 'DK', 'EE', 'ES',
              'FI', 'FR', 'GB', 'GR', 'HR', 'HU', 'IE', 'IT', 'LT', 'LU', 'LV', 'ME',
