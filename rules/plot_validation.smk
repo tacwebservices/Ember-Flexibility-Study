@@ -8,7 +8,7 @@ rule plot_validation:
         network="results/validation_{year}/networks/base_s_39_elec_.nc",
         ember_monthly="validation/ember_data/europe_monthly_full_release_long_format.csv",
         ember_yearly="validation/ember_data/yearly_full_release_long_format.csv",
-        power_flows="validation/ember_data/physical_energy_power_flows_2023.csv"
+        power_flows="validation/entsoe_data/physical_energy_power_flows_2023.csv"
     output:
         donut_subplots="results/validation_{year}/plots/donut_subplots.png",
         donut_comparison="results/validation_{year}/plots/donut_comparison.png",
