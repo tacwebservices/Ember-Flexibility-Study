@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: Open Energy Transition gGmbH, Ember, and contributors to the Ember Flexibility Study
+#
+# SPDX-License-Identifier: MIT
+
 # rules/emberdata.smk
 
 from pathlib import Path
