@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: Open Energy Transition gGmbH, Ember, and contributors to the Ember Flexibility Study
+#
+# SPDX-License-Identifier: MIT
+
 # Snakemake rule to generate validation graphs for power generation and flows
 rule plot_validation:
     input:
