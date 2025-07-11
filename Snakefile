@@ -20,6 +20,7 @@ from scripts._helpers import (
 
 configfile: "config/config.default.yaml"
 configfile: "config/plotting.default.yaml"
+configfile: "config/validation_2023.yaml"
 configfile: "config/config.yaml"
 
 
@@ -58,8 +59,14 @@ include: "rules/build_sector.smk"
 include: "rules/solve_electricity.smk"
 include: "rules/postprocess.smk"
 include: "rules/development.smk"
-include: "rules/emberdata.smk"
-include: "rules/plot_validation.smk"
+
+
+
+if config["download_ember_data"]:
+    include: "rules/emberdata.smk"
+
+if config["plot_validation_ember"]:
+    include: "rules/plot_validation.smk"
 
 
 if config["foresight"] == "overnight":

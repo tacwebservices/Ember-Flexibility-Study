@@ -1,37 +1,41 @@
 # rules/emberdata.smk
 
+from pathlib import Path
+
 DOWNLOADS = {
-    "validation/ember_data/yearly_full_release_long_format.csv":
+    Path("validation", "ember_data", "yearly_full_release_long_format.csv"):
         "https://storage.googleapis.com/emb-prod-bkt-publicdata/public-downloads/yearly_full_release_long_format.csv",
-    "validation/ember_data/europe_monthly_full_release_long_format.csv":
+    Path("validation", "ember_data", "europe_monthly_full_release_long_format.csv"):
         "https://storage.googleapis.com/emb-prod-bkt-publicdata/public-downloads/europe_monthly_full_release_long_format.csv",
-    "validation/entsoe_data/physical_energy_power_flows_2023.csv":
+    Path("validation", "entsoe_data", "physical_energy_power_flows_2023.csv"):
         "https://www.entsoe.eu/publications/data/power-stats/2023/physical_energy_power_flows_2023.csv"
 }
 
 rule download_ember_data:
     output:
-        list(DOWNLOADS.keys())
+        [str(path) for path in DOWNLOADS.keys()]
     run:
-        import os
         import urllib.request
         import yaml
 
-        config_path = "config/validation_2023.yaml"
-        if os.path.exists(config_path):
-            with open(config_path, "r") as f:
+        config_path = Path("config", "validation_2023.yaml")
+
+        # Load config if it exists
+        cfg = {}
+        if config_path.exists():
+            with config_path.open("r") as f:
                 cfg = yaml.safe_load(f)
-        else:
-            cfg = {}
 
         if cfg.get("download_ember_data", False):
             for filepath, url in DOWNLOADS.items():
-                os.makedirs(os.path.dirname(filepath), exist_ok=True)
-                if not os.path.exists(filepath):
+                # Create directory if it doesn't exist
+                filepath.parent.mkdir(parents=True, exist_ok=True)
+
+                # Download file if it doesn't already exist
+                if not filepath.exists():
                     print(f"Downloading {url} -> {filepath}")
-                    urllib.request.urlretrieve(url, filepath)
+                    urllib.request.urlretrieve(url, str(filepath))
                 else:
                     print(f"Already exists: {filepath}")
         else:
             print("Skipping ember data download (flag is false or not set).")
-
