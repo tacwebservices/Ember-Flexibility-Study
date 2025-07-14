@@ -15,6 +15,7 @@ year: 2023
 download_ember_data: true
 Plot_Validation_generation_and_flows_graphs: true
 Plot_Capacity_Demand: True
+plot_validation_ember: false
 
 snapshots:
   start: "2023-01-01"
