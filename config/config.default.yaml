@@ -65,7 +65,6 @@ enable:
   build_cutout: false
   retrieve_cutout: true
   drop_leap_day: true
-  
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#co2-budget
 co2_budget:
