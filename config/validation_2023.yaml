@@ -13,8 +13,8 @@ scenario:
 # Download data and plot Validation graphs for power generation and flows
 year: 2023
 download_ember_data: true
-Plot_Validation_generation_and_flows_graphs: true
-Plot_Capacity_Demand: True
+plot_validation_generation_and_flows_graphs: true
+plot_capacity_demand: true
 plot_validation_ember: false
 
 snapshots:
@@ -74,7 +74,7 @@ load:
     enable: true
     interpolate_limit: 3
     time_shift_for_large_gaps: 1w
-  manual_adjustments: true # false
+  manual_adjustments: false # false
   scaling_factor: 1.0
   fixed_year: false # false or year (e.g. 2013)
   supplement_synthetic: true
